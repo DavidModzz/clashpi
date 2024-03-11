@@ -111,8 +111,8 @@ class LeagueStats {
 }
 
 class Player {
-    constructor(tag, name, expLevel, expPoints, totalExpPoints, starPoints, trophies, trophyRecord,
-                battleCount, wins, threeCrowns, losses, challengeCardsWon, challengeBattleCount,
+    constructor(tag, name, expLevel, expPoints, totalExpPoints, starPoints, trophies, bestTrophies,
+                battleCount, wins, threeCrownWins, losses, challengeCardsWon, challengeBattleCount,
                 tournamentCardsWon, tournamentBattleCount, role, donations, donationsReceived,
                 totalDonations, warDayWins, clanCardsCollected, clan, arena, leagueStats,
                 badges, achievements, cards, favouriteCard) {
@@ -123,10 +123,10 @@ class Player {
         this.totalExpPoints = totalExpPoints;
         this.starPoints = starPoints;
         this.trophies = trophies;
-        this.trophyRecord = trophyRecord;
+        this.bestTrophies = bestTrophies;
         this.battleCount = battleCount;
         this.wins = wins;
-        this.threeCrowns = threeCrowns;
+        this.threeCrownWins = threeCrownWins;
         this.losses = losses;
         this.challengeCardsWon = challengeCardsWon;
         this.challengeBattleCount = challengeBattleCount;
@@ -156,10 +156,10 @@ class Player {
             jsonObject.totalExpPoints,
             jsonObject.starPoints,
             jsonObject.trophies,
-            jsonObject.trophyRecord,
+            jsonObject.bestTrophies,
             jsonObject.battleCount,
             jsonObject.wins,
-            jsonObject.threeCrowns,
+            jsonObject.threeCrownWins,
             jsonObject.losses,
             jsonObject.challengeCardsWon,
             jsonObject.challengeBattleCount,
