@@ -128,6 +128,7 @@ class Player {
         this.wins = wins;
         this.threeCrownWins = threeCrownWins;
         this.losses = losses;
+        this.draws = battleCount - (wins + losses);
         this.challengeCardsWon = challengeCardsWon;
         this.challengeBattleCount = challengeBattleCount;
         this.tournamentCardsWon = tournamentCardsWon;
@@ -171,7 +172,7 @@ class Player {
             jsonObject.totalDonations,
             jsonObject.warDayWins,
             jsonObject.clanCardsCollected,
-            jsonObject.clan ? jsonObject.clan.name : 'not in a clan',
+            jsonObject.clan ? jsonObject.clan.name : 'Sin clan',
             jsonObject.arena.name,
             LeagueStats.fromJSON(jsonObject.leagueStatistics),
             jsonObject.badges.map(Badge.fromJSON),
