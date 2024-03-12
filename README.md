@@ -61,6 +61,10 @@ client.getPlayerRanks('2023-03')
 
 > Get a list of all locations in the game
 
+* **getClan**(tag)
+
+> Get all information about a specific clan
+
 * **getClanRanks**(locationId, clanWars = false, limit = undefined)
 
 > Get a ranking of all clans in a certain location, either by clan ranking or by clan-war ranking 
