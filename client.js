@@ -2,6 +2,7 @@ const { Connector} = require('./connector');
 const { Card } = require('./card');
 const { ChallengeView } = require('./challenge');
 const { Player } = require('./player');
+const { Clan } = require('./clan');
 const { BattleLog } = require('./battle');
 const { Location, ClanRanking } = require('./location');
 const { PlayerRanking } = require('./season');
@@ -63,6 +64,13 @@ class Client {
         const locations = (await this.connector.request('locations', limitQuery)).items;
         return locations
             .map(Location.fromJSON);
+    }
+
+    async getClan(tag) {
+        // Allow getClan to be called on a tagged object
+        tag = this.argumentToString(`getClan(${tag})`, tag, 'tag');
+        const clan = await this.connector.request(['clans', tag]);
+        return Clan.fromJSON(clan);
     }
 
     async getClanRanks(locationId, clanWars = false, limit = undefined) {
